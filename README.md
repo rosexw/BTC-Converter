@@ -22,13 +22,13 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 ----
 
-# Task
+## Task
 Rebuild a modified version of the ‘Currency Pair Trading’ user interface which allows a user to
 complete a market trade between US Dollars and Bitcoin
 Pull the ` last_price` from the Bitfinex (BFX) public API:
 https://docs.bitfinex.com/docs/public-endpoints
 Currency pair to use: US dollars ($) to Bitcoin
-# Requirements
+## Requirements
 - Must be made using HTML, CSS, React, and Node.js
 - Include a state manager (such as Redux), used as an intermediary while waiting for data
 - Match the UI to the following design mockup as closely as possible
@@ -42,7 +42,7 @@ Instructions
 user
 - Execute the “trade” when the Trade button is clicked and update with the new USD and
 BTC account balance
-# Considerations
+## Considerations
 - Organized and understandable code
 - Bonus points for coherent and descriptive comments
 - The functional UI matches the design as close as possible
