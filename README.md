@@ -34,7 +34,7 @@ Currency pair to use: US dollars ($) to Bitcoin
 - Match the UI to the following design mockup as closely as possible
 - Include some form of testing
 - Avoid using frontend libraries such as Bootstrap
-Instructions
+## Instructions
 - Your account is pre-funded with $156.12 USD. User can trade with any amount
 - User can trade any amount up and equal to $156.12 USD
 - Fetch the market price of Bitcoin through the public API
