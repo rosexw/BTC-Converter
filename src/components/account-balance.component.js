@@ -1,7 +1,15 @@
 import React, {Component} from 'react';
 import { AccountBalanceItem } from './account-balance-item.component';
+import { connect } from 'react-redux';
 
-export class AccountBalance extends Component {
+const mapStateToProps = (state) => {
+  return {
+    USD: state.accountBalance.USD,
+    BTC: state.accountBalance.BTC
+  }
+}
+
+class AccountBalance extends Component {
   render() {
     return (
       <div>
@@ -10,11 +18,15 @@ export class AccountBalance extends Component {
             <tr><td>Account Balance</td></tr>
           </thead>
           <tbody>
-            <AccountBalanceItem currencyLabel="USD" currencyValue="$156.12" />
-            <AccountBalanceItem currencyLabel="BTC" currencyValue="0.00000" />
+            <AccountBalanceItem currencyLabel="USD" currencyValue={this.props.USD} />
+            <AccountBalanceItem currencyLabel="BTC" currencyValue={this.props.BTC} />
           </tbody>
         </table>
       </div>
     )
   }
 }
+
+export default connect(
+  mapStateToProps
+)(AccountBalance);
