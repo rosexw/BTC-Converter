@@ -6,8 +6,8 @@ import { connect } from 'react-redux';
 
 const mapStateToProps = (state) => {
   return {
-    USD: state.accountBalance.USD,
-    BTC: state.accountBalance.BTC
+    USD: state.trade.USD,
+    BTC: state.trade.BTC
   }
 }
 

@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux'
-import accountBalanceReducer from './account-balance.reducer';
+import tradeReducer from './trade.reducer';
  
 export default combineReducers({
-  accountBalance: accountBalanceReducer,
+  trade: tradeReducer,
 })

@@ -6,3 +6,10 @@ export function executeTrade(amountSell, currencySell = "USD", currencyBuy = "BT
     currencyBuy
   }
 }
+
+export function setTradeAmount(amountSell) {
+  return {
+    type: "SET_TRADE_AMOUNT",
+    amountSell
+  }
+}
