@@ -2,19 +2,7 @@ import React, {Component} from 'react';
 import { AccountBalanceItem } from './account-balance-item.component';
 
 export class AccountBalance extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      results: [],
-    };
-  }
-
-  componentDidMount() {
-
-  }
-
   render() {
-    const {results} = this.state;
     return (
       <div>
         <table>

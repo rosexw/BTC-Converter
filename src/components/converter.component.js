@@ -1,19 +1,7 @@
 import React, {Component} from 'react';
 
 export class Converter extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      results: [],
-    };
-  }
-
-  componentDidMount() {
-
-  }
-
   render() {
-    const {results} = this.state;
     return (
       <div>
         <p>Trade</p>
