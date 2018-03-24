@@ -5,8 +5,12 @@ const initialState = {
 
 export default function accountBalanceReducer(state = initialState, action) {
   switch (action.type) {
-    case 'UPDATE_BALANCE':
-      return state;
+    case 'EXECUTE_TRADE':
+      return {
+        ...state,
+        [action.currencySell]: state[action.currencySell] - action.amountSell,
+        [action.currencyBuy]: state[action.currencyBuy] + action.amountSell * 2,
+      };
     default:
       return state;
   }

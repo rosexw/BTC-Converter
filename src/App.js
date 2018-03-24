@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { Converter } from './components/converter.component';
+import Converter from './components/converter.component';
 import AccountBalance from './components/account-balance.component';
 
 class App extends Component {

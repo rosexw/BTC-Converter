@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import { AccountBalanceItem } from './account-balance-item.component';
 import { connect } from 'react-redux';
 
+// import 'account-balance.action';
+
 const mapStateToProps = (state) => {
   return {
     USD: state.accountBalance.USD,
