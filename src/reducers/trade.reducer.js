@@ -1,3 +1,4 @@
+// set initialState to the values specified in the mock up
 const initialState = {
   USD: 156.12,
   BTC: 0.00000,
@@ -8,6 +9,7 @@ const initialState = {
 export default function tradeReducer(state = initialState, action) {
   switch (action.type) {
     case 'EXECUTE_TRADE':
+      // decrease sell balance and increase buy balance based on conversion rate and price specified by user
       return {
         ...state,
         [action.currencySell]: state[action.currencySell] - action.amountSell,

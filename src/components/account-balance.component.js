@@ -2,9 +2,8 @@ import React, {Component} from 'react';
 import { AccountBalanceItem } from './account-balance-item.component';
 import { connect } from 'react-redux';
 
-// import 'account-balance.action';
-
 const mapStateToProps = (state) => {
+  // get account balance from redux state
   return {
     USD: state.trade.USD,
     BTC: state.trade.BTC

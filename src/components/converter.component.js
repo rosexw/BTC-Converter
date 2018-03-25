@@ -22,6 +22,7 @@ const mapDispatchToProps = (dispatch) => {
 
 class Converter extends Component {
   componentDidMount() {
+    // fetch conversion rate when component loads
     this.props.onFetchConversionRate();
   }
 
@@ -35,9 +36,12 @@ class Converter extends Component {
   }
 
   render() {
+    // if the conversion rate is fetching, then display the word 'Fetching...' inside the placeholder
     const placeholder = this.props.fetchingConversionRate ? 'Fetching...' : '';
+    // checks if the trade amount is valid (i.e. not greater than the balance) and that the conversion rate has been fetched. Otherwise, the button for trade is disabled and a lighter colour. This is done in app.css.
     const disabled = !this.props.tradeAmountValid || this.props.fetchingConversionRate;
 
+    // fields that cannot be changed like the currency and the amount buy are all read readOnly
     return (
       <form onSubmit={this.handleSubmit}>
         <p>Trade</p>

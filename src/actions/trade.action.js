@@ -29,7 +29,7 @@ const fetchConversionRateSuccess = (price) => {
   }
 }
 
-
+// uses Redux Thunk middleware - allows us to write action creators that return a function instead of an action
 export const fetchConversionRate = () => {
   return (dispatch) => {
     dispatch(fetchConversionRateStart());
