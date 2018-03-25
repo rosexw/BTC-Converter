@@ -9,20 +9,20 @@ export function executeTrade(amountSell, currencySell = "USD", currencyBuy = "BT
   }
 }
 
-export function setTradeAmount(amountSell) {
+export const setTradeAmount = amountSell => {
   return {
     type: "SET_TRADE_AMOUNT",
     amountSell
   }
 }
 
-const fetchConversionRateStart = () => {
+export const fetchConversionRateStart = () => {
   return {
     type: "FETCH_CONVERSION_RATE_START"
   }
 }
 
-const fetchConversionRateSuccess = (price) => {
+export const fetchConversionRateSuccess = (price) => {
   return {
     type: "FETCH_CONVERSION_RATE_SUCCESS",
     price
