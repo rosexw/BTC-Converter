@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { executeTrade, setTradeAmount } from '../actions/trade.action';
+import { executeTrade, setTradeAmount, fetchConversionRate } from '../actions/trade.action';
 
 const mapStateToProps = (state) => {
+  const quote = state.trade.conversionRate && state.trade.tradeAmount ? state.trade.tradeAmount / state.trade.conversionRate : ''
   return {
     tradeAmount: state.trade.tradeAmount,
+    tradeAmountValid: state.trade.tradeAmount <= state.trade.USD,
+    fetchingConversionRate: state.trade.fetchingConversionRate,
+    quote,
   };
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onTrade: (amount) => dispatch(executeTrade(amount)),
-    onSetTradeAmount: (amount) => dispatch(setTradeAmount(amount))
+    onSetTradeAmount: (amount) => dispatch(setTradeAmount(amount)),
+    onFetchConversionRate: () => dispatch(fetchConversionRate())
   };
 }
 
 class Converter extends Component {
+  componentDidMount() {
+    this.props.onFetchConversionRate();
+  }
 
   handleChange = (event) => {
     this.props.onSetTradeAmount(event.target.value);
@@ -27,6 +35,9 @@ class Converter extends Component {
   }
 
   render() {
+    const placeholder = this.props.fetchingConversionRate ? 'Fetching...' : '';
+    const disabled = !this.props.tradeAmountValid || this.props.fetchingConversionRate;
+
     return (
       <form onSubmit={this.handleSubmit}>
         <p>Trade</p>
@@ -35,9 +46,10 @@ class Converter extends Component {
 
         <p>For</p>
         <input type="text" name="currencyBuy" value="BTC" readOnly/><br/>
-        <input type="text" name="amountBuy" placeholder = "Display Quote" readOnly/><br/>
+        <input type="text" name="amountBuy" placeholder={placeholder}
+        value={this.props.quote} readOnly/><br/>
 
-        <button type="submit">Trade</button>
+        <button type="submit" disabled={disabled}>Trade</button>
       </form>
     )
   }
