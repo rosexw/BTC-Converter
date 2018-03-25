@@ -2,6 +2,7 @@
   "name": "coinsquare",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://rosexw.github.io/BTC-Converter",
   "dependencies": {
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -13,11 +14,16 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "proxy": {
     "/api": {
       "target": "https://api.bitfinex.com/"
     }
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
   }
 }

@@ -1,3 +1,7 @@
+App is now deployed, please check it out here: https://rosexw.github.io/BTC-Converter/
+
+[Screenshot of App](screenshot.png)
+
 ## Scripts to Run
 In the project directory, you can run:
 
